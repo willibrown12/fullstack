@@ -11,7 +11,7 @@ import ListItemText from '@mui/material/ListItemText';
 
 import HomeIcon from '@mui/icons-material/Home';
 import BarChartIcon from '@mui/icons-material/BarChart';
-import { Link } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 import { routes } from '../../App';
 import AddBusinessIcon from '@mui/icons-material/AddBusiness';
 const drawerWidth = 240;
@@ -19,15 +19,10 @@ const drawerWidth = 240;
 export default function PermanentDrawerLeft() {
   return (
     
-     
+     <div >
       <Drawer
         sx={{
           width: drawerWidth,
-          flexShrink: 0,
-          '& .MuiDrawer-paper': {
-            width: drawerWidth,
-            boxSizing: 'border-box',
-          },
         }}
         variant="permanent"
         anchor="left"
@@ -49,10 +44,16 @@ export default function PermanentDrawerLeft() {
             </Link>
         </ListItem>
     ))}
+   
 </List>
-    
+
       </Drawer>
-    
+      
+      <main style={{ marginLeft:100}}>
+        <Outlet />
+      </main>
+      </div>
+      
   );
 }
 
@@ -64,7 +65,7 @@ const iconsMapping = {
     home: <HomeIcon/>,
     customers:<AddBusinessIcon/>,
     orders:<LocalShippingIcon/>,
-    data:<PostAddIcon/>,
+    status:<PostAddIcon/>,
     charts:<BarChartIcon/>,
     products:<InventoryIcon/>
 

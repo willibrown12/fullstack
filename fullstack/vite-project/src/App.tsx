@@ -6,36 +6,41 @@ import {
 } from "react-router-dom";
 
 import TemporaryDrawer from './pages/root';
+import { Customers } from './pages/customers';
+import { Orders } from './pages/orders';
+import { Products } from './pages/products';
+import { Status } from './pages/ordres_data';
+import { Charts } from './pages/charts';
 
 
 export const routes =[
   {
     lable:"customers",
     path: "customers",
-    element: <>aaaa</>
+    element: <Customers/>
   },
   {
     lable:"charts",
     path: "charts",
-    element: <>aaaa</>
+    element: <Charts/>
   },
   {
     lable:"orders",
     path: "orders",
-    element: <>aaaa</>
+    element:  <Orders/>
   },
-  { lable:"data",
+  { lable:"status",
     path: "orders_data",
-    element: <>aaaa</>
+    element: <Status/>
   },
   { lable:"products",
     path: "products",
-    element: <>aaaa</>
+    element: <Products/>
   },
   {
     lable:"home",
     path: "home",
-    element: <>aaaa</>
+    element: <>hey boy</>
   },
 ]
 
@@ -58,9 +63,7 @@ function App() {
   
   return (
     <>
-      
             <RouterProvider router={router} />
-    
     </>
 )
 

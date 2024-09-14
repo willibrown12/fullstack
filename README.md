@@ -16,3 +16,36 @@ const app = express()
 
 app.listen(3000)
 ```
+
+10: npm i dotenv  
+11: create .env file  
+12: update code 
+
+```
+import express  from "express";
+import dotenv from "dotenv"
+dotenv.config()
+
+
+
+const app = express()
+
+app.get("/",(req,res,next)=>{
+    res.send("api is okay")
+})
+
+app.listen(process.env.PORT, ()=> {
+    console.log(`api is running on port ${process.env.PORT}`);
+    
+})
+
+
+
+
+```
+13: npm i cors
+
+## database for the api
+
+1: npm install --save mysql2  
+2: npm install --save-dev @types/node
