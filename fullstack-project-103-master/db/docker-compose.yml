@@ -1,11 +1,28 @@
-version: '3.3'
+
 services:
+  # client:
+  #   image: client
+  #   ports:
+  #     - "4200:4200"
+  # api:
+  #   image: northwind-api
+  #   ports:
+  #     - "3500:3500"
+  # api2:
+  #   image: northwind-api
+  #   ports:
+  #     - "3501:3500"
+  # api3:
+  #   image: northwind-api
+  #   ports:
+  #     - "3502:3500"                 
   db:
     image: mysql:8.0
     restart: always
     environment:
       MYSQL_DATABASE: 'db'
-    
+      # So you don't have to use root, but you can if you like
+      MYSQL_USER: 'user'
       # You can use whatever password you like
       MYSQL_PASSWORD: 'password'
       # Password for root access

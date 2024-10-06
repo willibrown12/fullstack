@@ -45,7 +45,38 @@ app.listen(process.env.PORT, ()=> {
 ```
 13: npm i cors
 
-## database for the api
 
-1: npm install --save mysql2  
-2: npm install --save-dev @types/node
+14: npm install --save mysql2  
+15: npm install --save-dev @types/node
+16: npm i body-parser
+17: npm i @types/body-parser
+18 : npm i zod
+
+
+
+```
+import express from "express"
+import dotenv from "dotenv"
+import { router as customersRouter } from "./customers"
+import bodyParser from "body-parser"
+import cors from "cors"
+dotenv.config()
+const app = express()
+console.log("Application Start")
+app.use(cors())
+app.use(bodyParser.json())
+
+app.get("/health-check", (req, res, next) => {
+    return res.json({ message: "Server is up - Docker/Not" })
+})
+
+app.use("/customers", customersRouter)
+
+
+app.listen(process.env.PORT, () => {
+    console.log(`Application Listen to Port: ${process.env.PORT}`)
+})
+
+
+
+```

@@ -31,3 +31,20 @@ Create the following application
 # EX + HW 15/9 
 1. Create the same handlers & entry points for employees, get/create/update/delete
 2. add filter/search - to employees & make the customer search work!
+
+# Homework
+1. Build the client Employees Page with 50% of the columns from the DB
+
+
+# EX Docker
+1. watch - https://www.youtube.com/watch?v=pTFZFxd4hOI
+
+
+# EX Docker - multiple containers - same image
+1. When application starts add console.log
+- `console.log("Application start")`
+2. When application listen to port add console.log
+- `console.log("Listening to Port" + process.env.PORT)`
+
+3. navigate to the api folder - `docker build . --tag api-db`
+4. navigate to db folder - `docker compose up`
